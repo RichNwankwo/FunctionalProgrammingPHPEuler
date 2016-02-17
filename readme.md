@@ -5,3 +5,4 @@ Leverages lstrojny' functional-php https://github.com/lstrojny/functional-php
 Problems found on https://projecteuler.net/
 
 Really no purpose for this other than practice :)
+

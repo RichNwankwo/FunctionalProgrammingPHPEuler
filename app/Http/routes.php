@@ -53,6 +53,20 @@ Route::get('problem1', function(){
     return $numbers;
 });
 
+Route::get('problem2', function(){
+    // Problem 2
+
+    // Got a little stuck on this one
+    // Idea is create a take while function
+    // That feeds into an array
+    // Until it hits a certain number
+    $takeWhile = function(){
+
+    };
+
+
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
