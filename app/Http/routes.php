@@ -1,4 +1,5 @@
 <?php
+use App\Helpers\takeWhileFib;
 use function Functional\average;
 use function Functional\difference;
 use function Functional\map;
@@ -54,16 +55,21 @@ Route::get('problem1', function(){
 });
 
 Route::get('problem2', function(){
-    // Problem 2
 
-    // Got a little stuck on this one
-    // Idea is create a take while function
-    // That feeds into an array
-    // Until it hits a certain number
-    $takeWhile = function(){
-
+    // Callback that determines whether a value is even
+    $isEven = function($number){
+        return ($number % 2 == 0);
     };
 
+    // Sorta cheated here...
+    // Really wanted to do this in a functional way
+    // So I created a iterator object
+    // That returns a fib sequence under a certain number
+    $solution = reduce_left(select(new takeWhileFib(4000000),$isEven), function($value, $index, $collection,$reduction){
+        return $reduction + $value;
+    },0);
+
+    return $solution;
 
 });
 
