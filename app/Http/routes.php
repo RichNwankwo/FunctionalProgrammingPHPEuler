@@ -1,5 +1,6 @@
 <?php
 use App\Helpers\takeWhileFib;
+use App\Helpers\takeWhile;
 use function Functional\average;
 use function Functional\difference;
 use function Functional\map;
@@ -80,6 +81,22 @@ Route::get('problem3', function(){
     // How can we do this in a functional way?
     // Well Brute Force would be...
     // max($number => getPrimeFactors)
+
+
+    $pf = function($number){
+
+       return select(new takeWhile($number), function($n, $number){
+            if($n > 0)
+            {
+                return ($number % $n == 0);
+            }
+            return false;
+
+        });
+    };
+
+//    $answer = max($pf(30));
+    return $pf(10);
 
 
 });
